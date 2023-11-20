@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <!--
+        Jquery kodlarıyla çalışabilmek için jquery kütüphanesini head taglarının arasına eklememiz gerekmektedir
+        Jquery kütüphanesine ulaşmak için arama motoruna jquery get started yazmamız gerekmektedir
+        Genellikle en üstte çıkan web sitesinde en güncel jquery kütüphanesi çıkmaktadır.Orada bulunan kütüphaneyi script tagları arasında eklememiz yeterlidir
+
+    -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            //$("p").click(function () {
+
+            //    $(this).hide();
+            //});
+            $(".result").click(function () {
+
+                $(this).hide();
+            });
+        });
+    </script>
+</head>
+<body>
+    <!--
+    Jquery ile değer oku ve değer atama
+    -----------------------------------
+    Bu işlem için 3 farklı metod kullanılmaktadır
+        1-text()=> Belirtilen html elementinin içerisindeki yazıyı düz metin halinde alır ve değer ataması yapar
+        2-html()=>Belirtilen html elementinin içerisindeki yazıyı html formatında alır ve değer ataması yapar
+        3-value()=>form elementinin içerisine girilen value değerlerini alır ve değer ataması yapar
+    -->
+    <p > Tıkla bana JQUERY nin gücünü gör</p>
+    <p class="result"> Jquery Dersleri</p>
+    <hr />
+    <div class="yaziAlani">
+        Bu bir <b> yazı </b> alanıdır
+    </div>
+    <form>
+        <input name="ad"/>
+    </form>
+    <hr />
+    <button class="yaziOku"> Yazı Oku </button>
+    <button class="htmlOku"> HTML Oku </button>
+    <button class="valOku"> Değer Oku </button>
+    <hr />
+    <div class="bilgi"></div>
+    <hr />
+    <button class="yaziAta">Yazı Ata</button>
+    <button class="htmlAta">HTML Ata</button>
+    <button class="valAta">Değer Ata</button>
+    <script>
+        $(document).ready(function () {
+            $('.yaziOku').click(function () {
+                var deger = $(".yaziAlani").text();
+                $(".bilgi").text(deger);
+            });
+            $(".htmlOku").click(function () { 
+                var deger = $(".yaziAlani").html();
+                $(".bilgi").html(deger);
+            });
+            $('.valOku').click(function () {
+                var deger = $('input[name=ad]').val();
+                $(".bilgi").html(deger);
+            });
+            $(".yaziAta").click(function () {   
+                $(".bilgi").text("Merhaba" + '<font color="red"><b> Jquery</b></font> ')
+            });
+            $(".htmlAta").click(function () {
+                $(".bilgi").html("Merhaba" + '<font color="red"><b> Jquery</b></font> ')
+            });
+            $(".valAta").click(function () {
+                $("input[name=ad]").val("Merhaba bu benim yeni değerim");
+            });
+        });
+    </script>
+</body>
+</html>

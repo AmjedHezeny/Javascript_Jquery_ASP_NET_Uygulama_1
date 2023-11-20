@@ -1,0 +1,31 @@
+﻿body {
+}
+
+ul.tab{
+    list-style-type:none;
+    padding:0;
+}
+    ul.tab li{
+        display:inline-block;
+    }
+        ul.tab li a {
+            padding:10px 25px;
+            background-color:black;
+            color:white;
+            font-weight:600;
+            text-decoration:none;
+        }
+            ul.tab li a.active{
+                background-color:#808080;
+                color:black;
+            }
+.tabIcerik{
+    border:2px solid black;
+    padding:25px;
+}
+    .tabIcerik > div{
+        display:none;
+    }
+        .tabIcerik > div:first-child{
+            display:block;
+        }
